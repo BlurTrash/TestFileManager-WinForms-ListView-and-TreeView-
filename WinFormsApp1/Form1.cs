@@ -36,7 +36,6 @@ namespace WinFormsApp1
                 string[] directories = Environment.GetLogicalDrives();
                 foreach (string item in directories)
                 {                   
-                    //для listview
                     listView1.Items.Add(item, 0);
                     listPathDirs.Add(item);
                 }
@@ -143,17 +142,6 @@ namespace WinFormsApp1
                     parentNode.Nodes.Add(node);
                     fillNode(dir, node); //рекурсионный обход каталогов
                 }
-                //foreach (string file in dirs) //Заполнение узлов файлами - отключил, много файлов к которым нет доступа
-                //{
-                //    //определяем расширение файла и привязываем картинки
-                //    string fileName = System.IO.Path.GetFileName(file);
-                //    if (Path.GetExtension(fileName) == ".png" || Path.GetExtension(fileName) == ".jpeg" || Path.GetExtension(fileName) == ".bmp" || Path.GetExtension(fileName) == ".ico")
-                //        parentNode.Nodes.Add(file, file, 3);
-                //    else if (Path.GetExtension(fileName) == ".txt")
-                //        parentNode.Nodes.Add(file, file, 4);
-                //    else
-                //        parentNode.Nodes.Add(file, file, 2);
-                //}
             }
             catch { } // Если обрабатывать исключения, выдает ошибку "access to the path is denied"
             //штук 8 папок к которым нет доступа пишет, у меня на ноуте один логический диск C:
